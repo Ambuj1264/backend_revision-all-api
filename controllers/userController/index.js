@@ -7,7 +7,7 @@ const constants= require("../../static/index");
 const Registration = {
   registration: async (req, res) => {
     try {
-      const { name, email, password, mobile } = req.body;
+      const { name, email, password, mobile ,role} = req.body;
       validate.nullOrBlankAll(req,res,"name","email","password" );
       if(res.headersSent){
           return false
@@ -37,6 +37,7 @@ const Registration = {
             email: email.toLowerCase(),
             password: hassedPassword,
             mobile,
+            role,
           });
 
           userRegistration

@@ -13,7 +13,9 @@ if(token){
               });
              
         } else{
+         req.role=data.findRegisterAccount.role
           next();
+
         }
     })
 }
